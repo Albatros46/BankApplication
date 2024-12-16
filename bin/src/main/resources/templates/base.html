@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      th:fragment="layout(title,content)">
+<head>
+    <meta charset="UTF-8">
+    <title>SA Bank</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" >
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #000000, #ffd700);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-custom {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-custom a {
+            color: #ffffff !important;
+        }
+
+        .navbar-custom .navbar-brand {
+            font-weight: bold;
+        }
+
+        .navbar-custom .social-icons a {
+            color: #ffffff;
+            margin-left: 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-custom .social-icons a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 450px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            color: #dddddd;
+            text-align: left;
+            display: block;
+        }
+
+        .form-group input {
+            border: 1px solid #ffd700;
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .btn {
+            background-color: #ffd700;
+            border: none;
+            color: black;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffc700;
+        }
+
+        .custom-link {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .custom-link:hover {
+            color: #ffecb3;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px 0;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <!-- Sol tarafta yer alacak olan sosyal medya linkleri -->
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+            <a href="https://github.com/Albatros46" target="_blank" title="GitHub" class="nav-link">
+                <i class="fab fa-github"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="https://www.linkedin.com/in/servet46kcdg/" target="_blank" title="LinkedIn" class="nav-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </li>
+    </ul>
+
+    <!-- Banka adı ve menü linkleri sağ tarafa hizalanmış şekilde kalır -->
+    <a class="navbar-brand" href="#">SA Bank</a>
+    <ul class="navbar-nav ms-auto"> <!-- Sağ tarafa hizalanmış menü -->
+        <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="/transactions">Transactions</a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+    </ul>
+</nav>
+<div th:replace="${content}">
+    <!-- layout  -->
+</div>
+<footer class="footer">
+    <p>&copy; 2024 Code With Goldencat. All rights reserved. | <a href="https://github.com/Albatros46" class="custom-link">Servet Akcadag</a> | <a href="#" class="custom-link">Terms of Service</a></p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
